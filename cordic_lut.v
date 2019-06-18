@@ -1,5 +1,5 @@
 module CORDIC_LUT(N, value);
-	input [15:0] N;
+	input [4:0] N;
 	output signed [31:0] value;
 
 	wire signed [31:0] atan_LUT [0:30];

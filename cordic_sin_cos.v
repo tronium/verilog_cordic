@@ -34,7 +34,7 @@ module CORDIC_sin_cos (clock, strobe_in, angle, strobe_out, cos, sin);
 	wire signed [XY_SZ:0] Y_;
 	wire signed [31:0] Z_;
 
-	reg [15:0] N;
+	reg [4:0] N;
 	reg state = 0, prev_state = 0;
 	reg prev_strobe_in = 0;
 
@@ -50,7 +50,7 @@ module CORDIC_sin_cos (clock, strobe_in, angle, strobe_out, cos, sin);
 			state <=1;			
 		end
 		else if(state) begin
-			if(N < STG-1)
+			if(N < STG)
 				N<=N+1;
 			else
 				state <= 0;
